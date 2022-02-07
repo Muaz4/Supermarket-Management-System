@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 1, 2022, 11:57:51 PM
+    Author     : admin
+*/
+
+.user_n-design{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-color:linear-gradient(to bottom right,#a88865, #c59b6d);
+    -fx-border-radius: 10px;
+    -fx-text-inner-color:#000; 
+    
+    
+    
+}
+.sign_inbtn-design{
+   -fx-background-color: linear-gradient(to bottom right,#e4b773, #b5760a);
+   -fx-background-radius: 20px;
+   -fx-cursor: hand;
+   
+}
+
+.start-design{
+      -fx-background-color: linear-gradient(to bottom right,#e4b773, #b5760a);
+    
+}
+.wel_lbl-design{
+    
+     -fx-background-color: linear-gradient(to bottom right,#ceb591, #e0c9a8); 
+       -fx-background-radius: 20px;
+       -fx-cursor: hand;
+}
+.home_p-design{
+    
+   -fx-background-color: linear-gradient(to bottom right,#e4b773, #b5760a);   
+}
+.fast_pn-design{
+ -fx-background-color: linear-gradient(to bottom right,#e4b773, #b5760a);      
+}
+.add_btn-design{
+   -fx-background-color: linear-gradient(to bottom right,#cec3a3, #b5760a);
+   -fx-background-radius: 20px;
+   -fx-cursor: hand;  
+    
+}
