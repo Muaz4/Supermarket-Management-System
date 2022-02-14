@@ -8,6 +8,8 @@ package supermarket1;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,21 +42,22 @@ public class SplashController implements Initializable {
 
 public void IncreaseProgress(ActionEvent event) throws IOException{
 
-
-    while (i <= 4000) {
-            Myprogress.setProgress(i);
-            i = i + 200;
-            try {
-                Thread.sleep(250);
-            } catch (Exception e) {
-            }
-       
-        FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("FXMLDocument.fxml"));
+//            Myprogress.setProgress(i);
+//          
+//            try {
+//     for(int i= 0; i<=100; i++){
+//                Thread.sleep(30);
+//              Myprogress.setProgress(i);
+//            }
+//
+// }     catch (InterruptedException ex) {
+//           Logger.getLogger(SplashController.class.getName()).log(Level.SEVERE, null, ex);
+//       }
+    FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("FXMLDocument.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 840, 520);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(scene);
                     window.show(); 
- }
 
     }
     
@@ -63,6 +66,7 @@ public void IncreaseProgress(ActionEvent event) throws IOException{
   @Override
     public void initialize(URL url, ResourceBundle rb) {
    Myprogress.setStyle("-fx-accent: gray");
+
   
 }
 

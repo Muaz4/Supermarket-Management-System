@@ -48,3 +48,8 @@ and open the template in the editor.
    -fx-cursor: hand;  
     
 }
+.Update-design{
+   -fx-background-color: linear-gradient(to bottom right,#e9dcc3, #ede7dc);
+   -fx-background-radius: 20px;
+   -fx-cursor: hand;  
+}

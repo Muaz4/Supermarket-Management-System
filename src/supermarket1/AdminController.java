@@ -4,11 +4,16 @@
  */
 package supermarket1;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -42,7 +47,12 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void AddProduct(ActionEvent event) {
+    void AddProduct(ActionEvent event) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("AddProduct.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show(); 
 
     }
 
@@ -54,12 +64,34 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void ManageSeller(ActionEvent event) {
+    void ManageSeller(ActionEvent event) throws IOException {
+ FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("ManageSeller.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show(); 
 
     }
 
     @FXML
-    void ViewItem(ActionEvent event) {
+    void ViewItem(ActionEvent event) throws IOException {
+
+ FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("Tableview.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show(); 
+
+
+    }
+
+    @FXML
+    void Back(ActionEvent event) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("FXMLDocument.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show(); 
 
     }
 

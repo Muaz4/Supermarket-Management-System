@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="506.0" prefWidth="727.0" styleClass="add_btn-design" stylesheets="@cass.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="supermarket1.AddProductController">
+   <children>
+      <Label layoutX="214.0" layoutY="14.0" prefHeight="34.0" prefWidth="275.0" text="MANAGE PRODUCT">
+         <font>
+            <Font name="Imprint MT Shadow" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.8738170497424971" startY="0.13249211356466875">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="28.0" layoutY="100.0" prefHeight="34.0" prefWidth="117.0" text="PRODUCT ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="173.0" prefHeight="34.0" prefWidth="97.0" text="NAME">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="252.0" text="CATEGORY">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="108.0" prefHeight="34.0" prefWidth="117.0" text="QUANTITY">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="173.0" prefHeight="34.0" prefWidth="68.0" text="PRICE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="produtid_txt" layoutX="165.0" layoutY="104.0" prefHeight="34.0" prefWidth="179.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="name_txt" layoutX="165.0" layoutY="173.0" prefHeight="34.0" prefWidth="179.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="category_txt" layoutX="165.0" layoutY="249.0" prefHeight="34.0" prefWidth="179.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="quantity_txt" layoutX="513.0" layoutY="104.0" prefHeight="34.0" prefWidth="179.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="price_txt" layoutX="513.0" layoutY="173.0" prefHeight="34.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="add_btn" layoutX="50.0" layoutY="340.0" mnemonicParsing="false" onAction="#AddBtn" prefHeight="43.0" prefWidth="117.0" styleClass="Update-design" stylesheets="@cass.css" text="ADD">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="update_btn" layoutX="226.0" layoutY="340.0" mnemonicParsing="false" onAction="#Update" prefHeight="43.0" prefWidth="117.0" styleClass="Update-design" stylesheets="@cass.css" text="UPDATE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="delete_btn" layoutX="405.0" layoutY="340.0" mnemonicParsing="false" onAction="#Delete" prefHeight="43.0" prefWidth="117.0" styleClass="Update-design" stylesheets="@cass.css" text="DELETE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="back_btn" layoutX="34.0" layoutY="449.0" mnemonicParsing="false" onAction="#Back" prefHeight="36.0" prefWidth="75.0" text="BACK">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="exit_btn" layoutX="644.0" layoutY="449.0" mnemonicParsing="false" onAction="#Exit" prefHeight="36.0" prefWidth="75.0" text="EXIT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="clear_btn" layoutX="578.0" layoutY="340.0" mnemonicParsing="false" onAction="#Clear" prefHeight="43.0" prefWidth="117.0" styleClass="Update-design" stylesheets="@cass.css" text="CLEAR">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

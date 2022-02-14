@@ -33,6 +33,7 @@ public class SuperMarket1 extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+
     }
 
 }

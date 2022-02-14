@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="840.0" stylesheets="@cass.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarket1.AdminController">
    <children>
-      <Pane layoutX="-3.0" layoutY="-7.0" prefHeight="527.0" prefWidth="354.0" styleClass="home_p-design" stylesheets="@cass.css">
+      <Pane layoutX="-2.0" layoutY="-7.0" prefHeight="527.0" prefWidth="353.0" styleClass="home_p-design" stylesheets="@cass.css">
          <children>
             <Label layoutX="5.0" layoutY="8.0" prefHeight="54.0" prefWidth="348.0" text="        MANAGER PAGE">
                <font>
@@ -43,23 +43,24 @@
             </ImageView>
          </children>
       </Pane>
-      <Button fx:id="add_btn" layoutX="462.0" layoutY="88.0" mnemonicParsing="false" onAction="#AddProduct" prefHeight="54.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="ADD PRODUCTS">
+      <Button fx:id="add_btn" layoutX="462.0" layoutY="88.0" mnemonicParsing="false" onAction="#AddProduct" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="MANAGE PRODUCTS">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="view_btn" layoutX="462.0" layoutY="183.0" mnemonicParsing="false" onAction="#ViewItem" prefHeight="54.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW  ITEMS">
+      <Button fx:id="view_btn" layoutX="462.0" layoutY="212.0" mnemonicParsing="false" onAction="#ViewItem" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW  ITEMS">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="catagorie_btn" layoutX="462.0" layoutY="284.0" mnemonicParsing="false" onAction="#AddCatagories" prefHeight="54.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="ADD CATAGORIES">
+      <Button fx:id="seller_btn" layoutX="462.0" layoutY="333.0" mnemonicParsing="false" onAction="#ManageSeller" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" text="MANAGE SELLERS">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="seller_btn" layoutX="462.0" layoutY="378.0" mnemonicParsing="false" onAction="#ManageSeller" prefHeight="54.0" prefWidth="251.0" styleClass="add_btn-design" text="MANAGE SELLERS">
+      <Button fx:id="exit_btn" layoutX="726.0" layoutY="463.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="74.0" text="EXIT" textFill="#8d2d2d">
          <font>
-            <Font size="20.0" />
-         </font></Button>
-      <Button fx:id="exit_btn" layoutX="726.0" layoutY="463.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="74.0" text="EXIT" textFill="#c30505">
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="375.0" layoutY="465.0" mnemonicParsing="false" onAction="#Back" prefHeight="29.0" prefWidth="74.0" text="BACK">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SuperMarket1.jar" size="74068" download="eager" />
+    <jar href="SuperMarket1.jar" size="84402" download="eager" />
     <jar href="lib/JFoenix-master.jar" size="2566671" download="eager" />
     <jar href="lib/ojdbc14.jar" size="1536797" download="eager" />
   </resources>

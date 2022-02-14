@@ -77,15 +77,20 @@ public class LoginController implements Initializable {
 
         String uname = txt_user.getText();
         String pass = txt_pass.getText();
-
-        if (uname.equals("") && pass.equals("")) {
+     if(uname.equals("") && pass.equals("")) {
 
             login_lbl.setText("Please Insert Username or Password");
 
-        } else {
+        } 
+        
+         //else if (combox.getSelectedItem().toString().equals("Cashier")){
+        
+
+            // }
+                 else {
             try {
                 con = db.connMethod();
-                String sql = "select * from LOGIN where username = ? and password = ? and type = ?";
+                String sql = "select * from LOGIN where username = ? and password = ? and type =?";
 
                 pst = con.prepareStatement(sql);
 
@@ -95,15 +100,27 @@ public class LoginController implements Initializable {
 
                 rs = pst.executeQuery();
                 if (rs.next()) {
+       if(combox.getSelectionModel().getSelectedIndex()==0){
 
                     FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("Admin.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 800, 500);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(scene);
                     window.show();
+                    } else {
+               
+
+             FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("Cashier.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 900, 650);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show();
+
+
+                          }
                 } else 
 
-                    login_lbl.setText("Wrong Username or Password");
+                 login_lbl.setText("Wrong Username or Password");
                 
 
             } catch (ClassNotFoundException ex) {

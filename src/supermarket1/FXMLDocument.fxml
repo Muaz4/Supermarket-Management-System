@@ -68,7 +68,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <ComboBox fx:id="combox" layoutX="159.0" layoutY="147.0" prefHeight="36.0" prefWidth="233.0" promptText="Admin" stylesheets="@cass.css" />
+            <ComboBox fx:id="combox" layoutX="159.0" layoutY="147.0" prefHeight="36.0" prefWidth="233.0" promptText="Role" stylesheets="@cass.css" />
             <TextField fx:id="txt_user" layoutX="163.0" layoutY="218.0" prefHeight="36.0" prefWidth="233.0" promptText="Enter Username" styleClass="user_n-design" stylesheets="@cass.css" />
             <PasswordField fx:id="txt_pass" layoutX="164.0" layoutY="289.0" prefHeight="36.0" prefWidth="233.0" promptText="Enter Password" styleClass="user_n-design" stylesheets="@cass.css" />
             <Label layoutY="504.0" prefHeight="27.0" prefWidth="183.0" text=" Powered by Muaz" textFill="#a88865" />
