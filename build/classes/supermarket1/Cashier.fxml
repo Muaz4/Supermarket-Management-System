@@ -38,7 +38,7 @@
          <font>
             <Font size="20.0" />
          </font></TextArea>
-      <Button fx:id="print_btn" layoutX="640.0" layoutY="492.0" mnemonicParsing="false" onAction="#Print_btn" prefHeight="26.0" prefWidth="85.0" text="PRINT" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.666666666666629">
+      <Button fx:id="print_btn" layoutX="640.0" layoutY="492.0" mnemonicParsing="false" onAction="#Print_btn" prefHeight="26.0" prefWidth="85.0" styleClass="add_btn-design" stylesheets="@cass.css" text="PRINT" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.666666666666629">
          <font>
             <Font size="16.0" />
          </font>
@@ -75,7 +75,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="addtobill_btn" layoutX="85.0" layoutY="390.0" mnemonicParsing="false" onAction="#AddBill" prefHeight="44.0" prefWidth="128.0" text="ADD TO BILL">
+            <Button fx:id="addtobill_btn" layoutX="82.0" layoutY="399.0" mnemonicParsing="false" onAction="#AddBill" prefHeight="44.0" prefWidth="128.0" styleClass="add_btn-design" stylesheets="@cass.css" text="ADD TO BILL">
                <font>
                   <Font size="18.0" />
                </font>
@@ -90,16 +90,26 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="select_btn" layoutX="9.0" layoutY="312.0" mnemonicParsing="false" onAction="#Select" prefHeight="44.0" prefWidth="98.0" text="SELECT">
+            <Button fx:id="select_btn" layoutX="6.0" layoutY="324.0" mnemonicParsing="false" onAction="#Select" prefHeight="44.0" prefWidth="98.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="clear_btn" layoutX="189.0" layoutY="312.0" mnemonicParsing="false" onAction="#Clear" prefHeight="44.0" prefWidth="98.0" text="CLEAR">
+            <Button fx:id="clear_btn" layoutX="190.0" layoutY="324.0" mnemonicParsing="false" onAction="#Clear" prefHeight="44.0" prefWidth="98.0" styleClass="add_btn-design" stylesheets="@cass.css" text="CLEAR">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label layoutX="7.0" layoutY="273.0" prefHeight="27.0" prefWidth="71.0" text="DATE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="l_date" layoutX="128.0" layoutY="269.0" prefHeight="36.0" prefWidth="144.0" text="    ">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Label fx:id="total_lbl" layoutX="458.0" layoutY="498.0" prefHeight="36.0" prefWidth="153.0">

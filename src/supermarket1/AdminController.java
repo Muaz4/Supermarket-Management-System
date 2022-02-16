@@ -4,6 +4,7 @@
  */
 package supermarket1;
 
+import supermarket1.TableviewController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +13,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -23,6 +23,8 @@ import javafx.stage.Stage;
  *
  * @author admin
  */
+
+
 public class AdminController implements Initializable {
 
 
@@ -40,15 +42,14 @@ public class AdminController implements Initializable {
 
     @FXML
     private Button view_btn;
-
+   
     @FXML
-    void AddCatagories(ActionEvent event) {
-
-    }
+    private Button report_btn;
+  
 
     @FXML
     void AddProduct(ActionEvent event) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("AddProduct.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(AddProductController.class.getResource("AddProduct.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 840, 520);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(scene);
@@ -63,10 +64,12 @@ public class AdminController implements Initializable {
 
     }
 
+
+
     @FXML
     void ManageSeller(ActionEvent event) throws IOException {
- FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("ManageSeller.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+  FXMLLoader fxmlLoader = new FXMLLoader(SellerController.class.getResource("ManageSeller.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 620);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(scene);
                     window.show(); 
@@ -75,13 +78,13 @@ public class AdminController implements Initializable {
 
     @FXML
     void ViewItem(ActionEvent event) throws IOException {
-
- FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("Tableview.fxml"));
+    //TableviewController tc = new TableviewController();
+ FXMLLoader fxmlLoader = new FXMLLoader(TableviewController.class.getResource("Tableview.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 840, 520);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(scene);
                     window.show(); 
-
+       //tc.showTable();
 
     }
 
@@ -95,10 +98,31 @@ public class AdminController implements Initializable {
 
     }
 
+   @FXML
+    void Report(ActionEvent event) throws IOException {
+ FXMLLoader fxmlLoader = new FXMLLoader(ReportController.class.getResource("Report.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 840, 520);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(scene);
+                    window.show(); 
+    }
+
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+//
+//    private void showTable() {
+//       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//   
+//
+//
+// }
+
+  
     
 }

@@ -43,15 +43,15 @@
             </ImageView>
          </children>
       </Pane>
-      <Button fx:id="add_btn" layoutX="462.0" layoutY="88.0" mnemonicParsing="false" onAction="#AddProduct" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="MANAGE PRODUCTS">
+      <Button fx:id="add_btn" layoutX="462.0" layoutY="45.0" mnemonicParsing="false" onAction="#AddProduct" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="MANAGE PRODUCTS">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="view_btn" layoutX="462.0" layoutY="212.0" mnemonicParsing="false" onAction="#ViewItem" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW  ITEMS">
+      <Button fx:id="view_btn" layoutX="462.0" layoutY="146.0" mnemonicParsing="false" onAction="#ViewItem" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW  ITEMS">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="seller_btn" layoutX="462.0" layoutY="333.0" mnemonicParsing="false" onAction="#ManageSeller" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" text="MANAGE SELLERS">
+      <Button fx:id="seller_btn" layoutX="462.0" layoutY="362.0" mnemonicParsing="false" onAction="#ManageSeller" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" text="MANAGE SELLERS">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -63,6 +63,11 @@
       <Button layoutX="375.0" layoutY="465.0" mnemonicParsing="false" onAction="#Back" prefHeight="29.0" prefWidth="74.0" text="BACK">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="report_btn" layoutX="462.0" layoutY="257.0" mnemonicParsing="false" onAction="#Report" prefHeight="63.0" prefWidth="251.0" styleClass="add_btn-design" stylesheets="@cass.css" text="VIEW REPORTS">
+         <font>
+            <Font size="20.0" />
          </font>
       </Button>
    </children>

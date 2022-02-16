@@ -4,11 +4,13 @@
  */
 package supermarket1;
 
+import supermarket1.TBL.*;
+
 /**
  *
  * @author admin
  */
-public class Table {
+public class Table3{
   
    int PRODUCT_ID;
    String NAME, CATEGORY, QUANTITY, PRICE;
@@ -53,7 +55,7 @@ public class Table {
         return PRICE;
     }
 
-    public Table(int PRODUCT_ID, String NAME, String CATEGORY, String QUANTITY, String PRICE) {
+    public Table3(int PRODUCT_ID, String NAME, String CATEGORY, String QUANTITY, String PRICE) {
         this.PRODUCT_ID = PRODUCT_ID;
         this.NAME = NAME;
         this.CATEGORY = CATEGORY;

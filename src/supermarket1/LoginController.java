@@ -121,7 +121,8 @@ public class LoginController implements Initializable {
                 } else 
 
                  login_lbl.setText("Wrong Username or Password");
-                
+                txt_user.setText("");
+                txt_pass.setText("");
 
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);

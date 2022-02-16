@@ -1,31 +1,32 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package supermarket1;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import supermarket1.DBconnections;
 
+/**
+ *
+ * @author admin
+ */
 /**
  * FXML Controller class
  *
@@ -34,26 +35,26 @@ import javafx.stage.Stage;
 public class TableviewController implements Initializable {
 
     @FXML
-    private TableView<Table> TableView;
+    private javafx.scene.control.TableView<Table3> TableView;
 
     @FXML
-    private TableColumn<Table, Integer> col_proid;
+    private TableColumn<Table3, Integer> col_proid;
 
     @FXML
-    private TableColumn<Table, String> col_name;
+    private TableColumn<Table3, String> col_name;
 
     @FXML
-    private TableColumn<Table, String> col_category;
+    private TableColumn<Table3, String> col_category;
 
     @FXML
-    private TableColumn<Table, String> col_quantity;
+    private TableColumn<Table3, String> col_quantity;
 
     @FXML
-    private TableColumn<Table, String> col_price;
+    private TableColumn<Table3, String> col_price;
 
-   @FXML
+    @FXML
     void Back(ActionEvent event) throws IOException {
-  FXMLLoader fxmlLoader = new FXMLLoader(AdminController.class.getResource("Admin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TableviewController.class.getResource("Admin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene);
@@ -62,40 +63,47 @@ public class TableviewController implements Initializable {
     }
 
 
-    ObservableList<Table> listM = FXCollections.observableArrayList();
-    Connection con;
-    PreparedStatement pst;
-    ResultSet rs;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public ObservableList<Table3> getTableList() {
+        ObservableList<Table3> listM = FXCollections.observableArrayList();
         DBconnections db = new DBconnections();
-     try{
-        Connection con = db.connMethod();
-        ResultSet rs = con.createStatement().executeQuery("select * from PRODUCT");
+        ResultSet rs;
 
-while (rs.next()){
-             listM.add(new Table(Integer.parseInt(rs.getString("PRODUCT_ID")),rs.getString("NAME") , rs.getString("CATEGORY"), rs.getString("QUANTITY") , rs.getString("PRICE")));
-                }
+        try {
+            Statement st;
+            Connection con = db.connMethod();
+            String query = "select * from PRODUCT";
+            rs = con.createStatement().executeQuery(query);
 
-      } catch (SQLException ex){
-            Logger.getLogger(TableviewController.class.getName()).log(Level.SEVERE, null, ex);
-}       catch (ClassNotFoundException ex) {
-            Logger.getLogger(TableviewController.class.getName()).log(Level.SEVERE, null, ex);
+            while (rs.next()) {
+                listM.add ( new Table3(Integer.parseInt(rs.getString("PRODUCT_ID")),rs.getString("NAME") , rs.getString("CATEGORY"), rs.getString("QUANTITY") , rs.getString("PRICE")));
+            }
+
+        } catch (Exception ex) {
+
         }
+        return listM;
+    }
+
+    public void showTable() {
+        ObservableList<Table3> list = getTableList();
+
+        col_proid.setCellValueFactory(new PropertyValueFactory<Table3, Integer>("PRODUCT_ID"));
+        col_name.setCellValueFactory(new PropertyValueFactory<Table3, String>("NAME"));
+        col_category.setCellValueFactory(new PropertyValueFactory<Table3, String>("CATEGORY"));
+        col_quantity.setCellValueFactory(new PropertyValueFactory<Table3, String>("QUANTITY"));
+        col_price.setCellValueFactory(new PropertyValueFactory<Table3, String>("PRICE"));
+
+        TableView.setItems(list);
+    }
 
 
+@Override
+        public void initialize(URL url, ResourceBundle rb) {
 
+        showTable();
 
-
-        col_proid.setCellValueFactory(new PropertyValueFactory<Table, Integer>("PRODUCT_ID"));
-        col_name.setCellValueFactory(new PropertyValueFactory<Table, String>("NAME"));
-        col_category.setCellValueFactory(new PropertyValueFactory<Table, String>("CATEGORY"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<Table, String>("QUANTITY"));
-        col_price.setCellValueFactory(new PropertyValueFactory<Table, String>("PRICE"));
-
-          TableView.setItems(listM);
+ }
 
     }
 
-}
+

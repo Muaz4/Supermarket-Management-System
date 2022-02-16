@@ -120,10 +120,11 @@ public class AddProductController implements Initializable {
     @FXML
    void Delete(ActionEvent event) {
         DBconnections db = new DBconnections();
+   String name = name_txt.getText();
        try {
 
             con = db.connMethod();
-            String sql = "delete from PRODUCT where NAME = ?";
+            String sql = "delete * from PRODUCT where NAME = '"+name+"'";
 
             pst = con.prepareStatement(sql);
             pst.setString(2, name_txt.getText());

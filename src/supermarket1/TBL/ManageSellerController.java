@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package supermarket1;
+package supermarket1.TBL;
 
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import supermarket1.AdminController;
+import supermarket1.SellerTbl;
 
 /**
  * FXML Controller class
@@ -85,10 +88,10 @@ public class ManageSellerController implements Initializable {
     @FXML
     private TextField name_txt;
 
-    //int index = -1;
+  // int index = -1;
 
-//    @FXML
-//    void Add(ActionEvent event) {
+    @FXML
+    void Add(ActionEvent event) {
 //        DBconnections db = new DBconnections();
 //        String sellerid = sell_txt.getText();
 //        String name = name_txt.getText();
@@ -119,8 +122,8 @@ public class ManageSellerController implements Initializable {
 //            }
 //
 //        }
-//
-//    }
+
+    }
 
     @FXML
     void Back(ActionEvent event) throws IOException {
@@ -134,11 +137,11 @@ public class ManageSellerController implements Initializable {
 
     @FXML
     void Clear(ActionEvent event) {
-        pass_txt.setText(null);
-        sex_txt.setText(null);
-        sell_txt.setText(null);
-        salary_txt.setText(null);
-        name_txt.setText(null);
+//        pass_txt.setText(null);
+//        sex_txt.setText(null);
+//        sell_txt.setText(null);
+//        salary_txt.setText(null);
+//        name_txt.setText(null);
 
     }
 
@@ -152,9 +155,9 @@ public class ManageSellerController implements Initializable {
 
     }
 
-//     @FXML
-//    void getSelected(MouseEvent event) {
-//
+     @FXML
+    void getSelected(MouseEvent event) {
+
 //        index = CshierTable.getSelectionModel().getSelectedIndex();
 //        if (index <= -1) {
 //
@@ -167,16 +170,67 @@ public class ManageSellerController implements Initializable {
 //        pass_txt.setText(col_pass.getCellData(index).toString());
 //        sex_txt.setText(col_sex.getCellData(index).toString());
 //        salary_txt.setText(col_salary.getCellData(index).toString());
+
+    }
+
+//  public ObservableList<SellerTbl> getTableList() {
+//        ObservableList<SellerTbl> listM = FXCollections.observableArrayList();
+//        DBconnections db = new DBconnections();
+//        ResultSet rs;
 //
+//        try {
+//            Statement st;
+//            Connection con = db.connMethod();
+//            String query = "select * from CASHIER";
+//            rs = con.createStatement().executeQuery(query);
+//
+//            //Table
+//            while (rs.next()) {
+//               listM.add(new SellerTbl(Integer.parseInt(rs.getString("SELLERID")), rs.getString("NAME"), rs.getString("PASSWORD"), rs.getString("GENDER"), rs.getString("SALARY")));
+//                //listM.add(Table3);
+//            }
+//
+//        } catch (Exception ex) {
+//            //ex.printStackTrace();
+//        }
+//        return listM;
 //    }
+
+
 //
 //    ObservableList<SellerTbl> list = FXCollections.observableArrayList();
 //    Connection con;
 //    PreparedStatement pst;
 //    ResultSet rs;
 
+//   public void showTable() {
+//        ObservableList<SellerTbl> list = getTableList();
+//
+//        col_sell.setCellValueFactory(new PropertyValueFactory<SellerTbl, String>("SELLERID"));
+//       col_name.setCellValueFactory(new PropertyValueFactory<SellerTbl, String>("NAME"));
+//      col_pass.setCellValueFactory(new PropertyValueFactory<SellerTbl, Integer>("PASSWORD"));
+//       col_sex.setCellValueFactory(new PropertyValueFactory<SellerTbl, String>("GENDER"));
+//       col_salary.setCellValueFactory(new PropertyValueFactory<SellerTbl, String>("SALARY"));
+//
+//        CshierTable.setItems(list);
+//    }
+
+
+
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+                //showTable();
+}
+
+}
+
+
+
+
 //        DBconnections db = new DBconnections();
 //        try {
 //            Connection con = db.connMethod();
@@ -187,7 +241,7 @@ public class ManageSellerController implements Initializable {
 //            }
 //
 //        } catch (SQLException ex) {
-//            Logger.getLogger(TableviewController.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(ManageSellerController.class.getName()).log(Level.SEVERE, null, ex);
 //        } catch (ClassNotFoundException ex) {
 //            Logger.getLogger(ManageSellerController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
@@ -199,6 +253,6 @@ public class ManageSellerController implements Initializable {
 //        col_salary.setCellValueFactory(new PropertyValueFactory<SellerTbl, String>("SALARY"));
 //
 //        CshierTable.setItems(list);
-    }
+    
 
-}
+

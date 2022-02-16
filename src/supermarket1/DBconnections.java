@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author admin
  */
-class DBconnections {
+public class DBconnections {
 
     private static final String url = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String user = "Sup";
@@ -41,22 +41,4 @@ class DBconnections {
         return con;
     }
        
-/*public static ObservableList<Table> getDataTable() throws ClassNotFoundException{
-         
-         Connection con;
-         DBconnections db = new DBconnections();
-         con = db.connMethod();
-       ObservableList<Table> list = FXCollections.observableArrayList();
-     try{
-           PreparedStatement pst = con.PrepareStatement("Select * from PRODUCT");  
-          ResultSet rs = pst.executeQuery();
-        
-      while (rs.next()){
-             list.add(new Table(Integer.parseInt(rs.getString("PRODUCT_ID")),rs.getString("NAME") , rs.getString("CATEGORY"), rs.getString("QUANTITY") , rs.getString("PRICE")));
-                }
-          } catch (Exception ex) {    
-}
-   return list;
-}
-}*/
 }

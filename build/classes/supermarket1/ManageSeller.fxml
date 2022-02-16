@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="712.0" styleClass="fast_pn-design" stylesheets="@cass.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="supermarket1.ManageSellerController">
+<AnchorPane id="AnchorPane" onDragDetected="#View" prefHeight="574.0" prefWidth="712.0" styleClass="fast_pn-design" stylesheets="@cass.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarket1.SellerController">
    <children>
       <Label layoutX="236.0" layoutY="2.0" prefHeight="51.0" prefWidth="275.0" text="MANAGE CASHIER">
          <font>
@@ -36,47 +35,47 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="add_btn" layoutX="51.0" layoutY="242.0" mnemonicParsing="false" onAction="#Add" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="ADD">
+      <Button fx:id="add_btn" layoutX="31.0" layoutY="247.0" mnemonicParsing="false" onAction="#Add" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="ADD">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="edit_btn" layoutX="189.0" layoutY="242.0" mnemonicParsing="false" onAction="#Edit" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="EDIT">
+      <Button fx:id="edit_btn" layoutX="172.0" layoutY="247.0" mnemonicParsing="false" onAction="#Edit" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="EDIT">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="delete_btn" layoutX="369.0" layoutY="242.0" mnemonicParsing="false" onAction="#Delete" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="DELETE">
+      <Button fx:id="view_btn" layoutX="316.0" layoutY="247.0" mnemonicParsing="false" onAction="#View" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="VIEW">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="clear_btn" layoutX="531.0" layoutY="242.0" mnemonicParsing="false" onAction="#Clear" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="CLEAR">
+      <Button fx:id="clear_btn" layoutX="448.0" layoutY="247.0" mnemonicParsing="false" onAction="#Clear" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="CLEAR">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <TextField fx:id="sell_txt" layoutX="146.0" layoutY="79.0" prefHeight="29.0" prefWidth="181.0">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </TextField>
       <TextField fx:id="name_txt" layoutX="146.0" layoutY="134.0" prefHeight="29.0" prefWidth="181.0">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </TextField>
       <TextField fx:id="pass_txt" layoutX="476.0" layoutY="80.0" prefHeight="29.0" prefWidth="181.0">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </TextField>
       <TextField fx:id="sex_txt" layoutX="474.0" layoutY="134.0" prefHeight="29.0" prefWidth="181.0">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </TextField>
-      <TableView fx:id="CshierTable" layoutY="316.0" onMouseClicked="#getSelected" prefHeight="243.0" prefWidth="712.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <TableView fx:id="CshierTable" layoutY="316.0" onMouseClicked="#getSelected" prefHeight="243.0" prefWidth="712.0" AnchorPane.bottomAnchor="14.666666666666657" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="316.0">
         <columns>
           <TableColumn fx:id="col_sell" prefWidth="154.6666818857193" text="SELLERID" />
           <TableColumn fx:id="col_name" prefWidth="144.6666717529297" text="NAME" />
@@ -97,8 +96,13 @@
       </Label>
       <TextField fx:id="salary_txt" layoutX="146.0" layoutY="188.0" prefHeight="29.0" prefWidth="181.0">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </TextField>
+      <Button fx:id="delete_btn" layoutX="589.0" layoutY="247.0" mnemonicParsing="false" onAction="#Delete" prefHeight="39.0" prefWidth="94.0" styleClass="Update-design" stylesheets="@cass.css" text="DELETE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

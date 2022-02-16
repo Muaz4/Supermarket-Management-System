@@ -10,6 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +42,8 @@ public class CashierController implements Initializable {
     @FXML
     private Label total_lbl;
 
+    @FXML
+    private Label l_date;
 
     @FXML
     private Button clear_btn;
@@ -80,21 +85,26 @@ public class CashierController implements Initializable {
         String quantity = quantity_txt.getText();
         if (name.equals("") && price.equals("") && quantity.equals("")) {
             JOptionPane.showMessageDialog(null, "Missing Information!");
-        }
-     else {
-            i++;
-            prodTot = Double.valueOf(price_txt.getText()) * Double.valueOf(quantity_txt.getText());
-            GrdTotal = GrdTotal + prodTot; 
+        } else {
+            boolean availble = true;
+            availble = Remove();
+            if (availble == true) {
+                i++;
+                prodTot = Double.valueOf(price_txt.getText()) * Double.valueOf(quantity_txt.getText());
+                GrdTotal = GrdTotal + prodTot;
 
-            if (i == 1) {
-                txtArea.setText(txtArea.getText() + "===========AL-MAYA  SUPERMARKET===========\n\n" + "NUM     PRODUCT     PRICE     QUANTITY     TOTAL\n" + i + "       "
-                        + "            " + name_txt.getText() + "            " + price_txt.getText() + "            " + quantity_txt.getText() + "            " + prodTot + "\n");
+                if (i == 1) {
+                    txtArea.setText(txtArea.getText() + "===========AL-MAYA  SUPERMARKET===========\n\n" + "NUM     PRODUCT     PRICE     QUANTITY     TOTAL\n" + i + "       "
+                            + "            " + name_txt.getText() + "            " + price_txt.getText() + "            " + quantity_txt.getText() + "            " + prodTot + "\n");
+                } else {
+
+                    txtArea.setText(txtArea.getText() + i + "          " + name_txt.getText() + "            " + price_txt.getText() + "            " + quantity_txt.getText() + "            " + prodTot + "\n");
+
+                }
+                total_lbl.setText("Total = " + GrdTotal);
             } else {
-
-                txtArea.setText(txtArea.getText() + i + "          " + name_txt.getText() + "            " + price_txt.getText() + "            " + quantity_txt.getText() + "            " + prodTot + "\n");
-
+                JOptionPane.showMessageDialog(null, "insufficient resource");
             }
-        total_lbl.setText("Total = "+GrdTotal);
         }
 
     }
@@ -107,10 +117,64 @@ public class CashierController implements Initializable {
 
     @FXML
     void Print_btn(ActionEvent event) {
+          DBconnections db = new DBconnections();
+        String name = name_txt.getText();
+        String quantity = quantity_txt.getText();
+        String price = price_txt.getText();
+        String date = l_date.getText();
+        if (name.equals("") && quantity.equals("") && price.equals("") && date.equals("")) {
+
+            JOptionPane.showMessageDialog(null, "Please Insert!");
+
+        }else {
+            try {
+
+                con = db.connMethod();
+                String sql = "insert into REPORT (NAME,QUANTITY,PRICE,DAY)values(?,?,?,?)";
+                pst = con.prepareStatement(sql);
+                pst.setString(1, name);
+                pst.setString(2, quantity);
+                pst.setString(3, price);
+                pst.setString(4, date);
+                pst.execute();
+
+                JOptionPane.showMessageDialog(null, "Reported!");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex);
+
+            }
+    }}
+
+
+
+    boolean Remove() {
+        DBconnections db = new DBconnections();
+        boolean result = false;
+        float quantity = Float.parseFloat(quantity_txt.getText());
+        String name = name_txt.getText();
+
         try {
-            //txtArea.Print();
+            Connection con = db.connMethod();
+            String sql = "select * from PRODUCT where NAME ='" + name + "'";
+
+            ResultSet rs = con.createStatement().executeQuery(sql);
+            float availableQuan = 1;
+            if (rs.next()) {
+                availableQuan = Float.parseFloat(rs.getString("QUANTITY"));
+
+            }
+            if (availableQuan >= quantity) {
+                availableQuan = availableQuan - quantity;
+                String sql1 = "update PRODUCT set QUANTITY='" + availableQuan + "' where NAME ='" + name + "' ";
+                Statement st = con.createStatement();
+                st.executeUpdate(sql1);
+                result = true;
+            } else {
+                result = false;
+            }
         } catch (Exception ex) {
         }
+        return result;
     }
 
     @FXML
@@ -152,9 +216,22 @@ public class CashierController implements Initializable {
 
     }
 
+
+public void date(){
+
+   Date d = new Date();
+ 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    String dd = sdf.format(d);  
+   
+   l_date.setText(dd);
+
+}
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+   date();
+ }
 
 }
